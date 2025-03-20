@@ -1,0 +1,76 @@
+body::before {
+    content: "";
+    position: fixed; /* Fixiert es am Bildschirm */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #059630c4, #06632a8e);
+    z-index: -1;
+}
+
+.gradient-text {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(90deg, #07ee1a, #0c6b0cd5, #0a9e0af5, #07ee1a);
+    background-size: 200% 100%;
+    background-clip: text; /* Standard */
+    -webkit-background-clip: text; /* Für Safari & Chrome */
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s linear infinite;
+}
+
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: -200% 50%;
+    }
+}
+
+.container {
+    position: absolute;
+    top: 21%; /* Hier kannst du die Höhe einstellen */
+    left: 50%;
+    transform: translateX(-50%); /* Genau zentriert */
+    
+    display: flex;
+    gap: 50px; /* Abstand zwischen den Buttons */
+}
+
+.button1, .button2 {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: #0da83cda;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button1:hover, .button2:hover {
+    background-color: #09842f;
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(9, 132, 47, 0.4);
+}
+
+.button1 svg, .button2 svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.button1:hover svg, .button2:hover svg {
+    transform: translateX(3.2px);
+}
+
